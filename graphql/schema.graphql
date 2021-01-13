@@ -1,3 +1,11 @@
-type Query {
+type Person {
+  id: String!
   name: String!
+  age: Int!
+  gender: String!
+}
+
+type Query {
+  people: [Person]! # null일 수 없음. 무조건 반환할 것
+  person(id: Int!): Person
 }
