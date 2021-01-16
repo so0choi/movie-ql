@@ -1,11 +1,15 @@
-type Person {
+type Movie {
   id: String!
   name: String!
-  age: Int!
-  gender: String!
+  score: Int!
 }
 
 type Query {
-  people: [Person]! # null일 수 없음. 무조건 반환할 것
-  person(id: Int!): Person
+  movies: [Movie]! # null일 수 없음. 무조건 반환할 것
+  movie(id: Int!): Movie
+}
+
+type Mutation {
+  addMovie(name: String!, score: Int!): Movie!
+  deleteMovie(id: Int!): Boolean!
 }
